@@ -1,9 +1,13 @@
+import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-import 'package:injectable_tutorial/injection.iconfig.dart';
 
-@injectableInit
+import 'injection.config.dart';
+
+final GetIt getIt = GetIt.instance;
+
+@InjectableInit()
 void configureInjection(String environment) =>
-    $initGetIt(environment: environment);
+    $initGetIt(getIt, environment: environment);
 
 abstract class Env {
   static const test = 'test';
