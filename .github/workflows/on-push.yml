@@ -20,5 +20,5 @@ jobs:
             await github.rest.actions.createWorkflowDispatch({
               owner: 'toufeeq-refyne',
               repo: 'flutter-injectable-tutorial-copy',
-              event_type: 'on_core_server_push',
+              event_type: on_core_server_push,
             });
