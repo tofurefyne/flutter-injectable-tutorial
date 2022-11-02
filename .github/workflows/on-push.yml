@@ -1,0 +1,22 @@
+name: APK Build
+
+# This workflow is triggered on pushes to the repository.
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Dispatch to `customer-app`
+    runs-on: ubuntu-latest
+    steps:
+      - name: Emit repository_dispatch
+        uses: mvasigh/dispatch-action@main
+        with:
+          # You should create a personal access token and store it in your repository
+          token: ${{ secrets.TOUFEEQ_PERSONAL_ACCESS_TOKEN }}
+          repo: flutter-injectable-tutorial-copy
+          owner: toufeeq-refyne
+          event_type: on_core_server_push
