@@ -28,6 +28,6 @@ jobs:
             await github.rest.actions.createWorkflowDispatch({
               owner: 'toufeeq-refyne',
               repo: 'flutter-injectable-tutorial-copy',
-              workflow_id: 'on-push.yml',
+              workflow_id: 'workflows/on-push.yml',
               ref: 'main'
             });
