@@ -12,14 +12,6 @@ jobs:
     name: Dispatch to `customer-app`
     runs-on: ubuntu-latest
     steps:
-      #      - name: Emit repository_dispatch
-      #        uses: mvasigh/dispatch-action@main
-      #        with:
-      #          # You should create a personal access token and store it in your repository
-      #          token: ${{ secrets.TOUFEEQ_PERSONAL_ACCESS_TOKEN }}
-      #          repo: flutter-injectable-tutorial-copy
-      #          owner: toufeeq-refyne
-      #          event_type: on_core_server_push
       - name: Deploy Stage
         uses: actions/github-script@v6
         with:
@@ -28,6 +20,5 @@ jobs:
             await github.rest.actions.createWorkflowDispatch({
               owner: 'toufeeq-refyne',
               repo: 'flutter-injectable-tutorial-copy',
-#              workflow_id: 'on-push.yml',
               event_type: 'on_core_server_push',
             });
