@@ -17,8 +17,8 @@ jobs:
         with:
           github-token: ${{ secrets.TOUFEEQ_PERSONAL_ACCESS_TOKEN }}
           script: |
-            await github.rest.actions.dispatches({
-              owner: 'toufeeq-refyne',
+            await request('POST /repos/{owner}/{repo}/dispatches', {
+              owner:'toufeeq-refyne',
               repo: 'flutter-injectable-tutorial-copy',
-              event_type: 'on_core_server_push',
+              event_type: 'on_core_server_push',       
             });
