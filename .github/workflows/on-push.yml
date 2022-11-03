@@ -17,7 +17,7 @@ jobs:
         with:
           github-token: ${{ secrets.TOUFEEQ_PERSONAL_ACCESS_TOKEN }}
           script: |
-            await request('POST /repos/{owner}/{repo}/dispatches', {
+            await github.rest.repos.createDispatchEvent({
               owner:'toufeeq-refyne',
               repo: 'flutter-injectable-tutorial-copy',
               event_type: 'on_core_server_push',       
